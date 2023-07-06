@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Galaxy - Personal Blog Template</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- ** Plugins Needed for the Project ** -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/galaxy/theme/plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/galaxy/theme/plugins/fontawesome/css/all.css">
+        <link href="~/admin/plugins/toastr/toastr.min.css" rel="stylesheet" />
+        <link href="~/admin/plugins/toastr/toastr.css" rel="stylesheet" />
+    <!-- bootstrap -->
+    <!-- Main Stylesheet -->
+    <link href="~/galaxy/theme/css/style.css" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="~/galaxy/theme/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="~/galaxy/theme/images/favicon.png" type="image/x-icon">
+
+</head>
+<body>
+      @if (User.Identity.IsAuthenticated)
+    {
+        @await Component.InvokeAsync("_DefaultNavbar");
+    }
+    <!-- START preloader-wrapper -->
+    <div class="preloader-wrapper">
+        <div class="preloader-inner">
+            <div class="spinner-border text-red"></div>
+        </div>
+    </div>
+    <!-- END preloader-wrapper -->
+    <!-- START main-wrapper -->
+    <section class="d-flex">
+
+        <!-- start of sidenav -->
+        <aside>
+            <div class="sidenav position-sticky d-flex flex-column justify-content-between">
+                <a class="navbar-brand" href="/Home/Index/1" class="logo">
+                    <img src="~/galaxy/theme/images/musa.png" alt="">
+                </a>
+                <!-- end of navbar-brand -->
+
+                <div class="navbar navbar-dark my-4 p-0 font-primary">
+                    <ul class="navbar-nav w-100">
+                        <li class="nav-item ">
+                            <a class="nav-link text-white px-0 pt-0" href="/Home/Index/1">Ana Sayfa</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white px-0" href="/Home/About">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white px-0" href="/Home/Contact">İletişim</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white px-0" href="/Home/Privacy">Gizlilik & Politika</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white px-0" href="/Home/Login">Giriş</a>
+                        </li>
+                        <li class="nav-item mt-3">
+                            <select class="custom-select bg-transparent rounded-0 text-white shadow-none" id="pick-lang">
+                                <option selected value="en">Turkish</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end of navbar -->
+
+                <ul class="list-inline nml-2">
+                    <li class="list-inline-item">
+                        <a href="#!" class="text-white text-red-onHover pr-2">
+                            <span class="fab fa-twitter"></span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!" class="text-white text-red-onHover p-2">
+                            <span class="fab fa-facebook-f"></span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!" class="text-white text-red-onHover p-2">
+                            <span class="fab fa-instagram"></span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!" class="text-white text-red-onHover p-2">
+                            <span class="fab fa-linkedin-in"></span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- end of social-links -->
+            </div>
+        </aside>
+        <!-- end of sidenav -->
+        <div class="main-content">
+
+            <!-- start of mobile-nav -->
+            <header class="mobile-nav pt-4">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <a href="index.html">
+                                <img src="~/galaxy/theme/images/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 text-right">
+                            <button class="nav-toggle bg-transparent border text-white">
+                                <span class="fas fa-bars"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="nav-toggle-overlay"></div>
+            <!-- end of mobile-nav -->
+
+            <div class="container py-4 my-5">
+
+                @RenderBody()
+
+            </div>
+            <!-- start of footer -->
+            <footer class="bg-dark">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-lg-3 col-sm-6 mb-5">
+                            <h5 class="font-primary text-white mb-4">Inspirations</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#!">Privacy State</a></li>
+                                <li><a href="#!">Privacy</a></li>
+                                <li><a href="#!">State</a></li>
+                                <li><a href="#!">Privacy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-5">
+                            <h5 class="font-primary text-white mb-4">Templates</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#!">Privacy State</a></li>
+                                <li><a href="#!">Privacy</a></li>
+                                <li><a href="#!">State</a></li>
+                                <li><a href="#!">Privacy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-5">
+                            <h5 class="font-primary text-white mb-4">Resource</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#!">Privacy State</a></li>
+                                <li><a href="#!">Privacy</a></li>
+                                <li><a href="#!">State</a></li>
+                                <li><a href="#!">Privacy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-5">
+                            <h5 class="font-primary text-white mb-4">Company</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#!">Privacy State</a></li>
+                                <li><a href="#!">Privacy</a></li>
+                                <li><a href="#!">State</a></li>
+                                <li><a href="#!">Privacy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end of footer -->
+        </div>
+
+    </section>
+
+    <!-- END main-wrapper -->
+    <!-- All JS Files -->
+    <script src="~/galaxy/theme/plugins/jQuery/jquery.min.js"></script>
+    <script src="~/galaxy/theme/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="~/admin/plugins/toastr/toastr.js.map"></script>
+    <!-- Main Script -->
+    <script src="~/galaxy/theme/js/script.js"></script>
+</body>
+</html>

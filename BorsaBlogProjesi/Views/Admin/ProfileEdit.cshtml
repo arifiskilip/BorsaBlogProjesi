@@ -1,0 +1,33 @@
+﻿@model AppUserModel
+@{
+    ViewData["Title"] = "ProfileEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("ProfileEdit", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="form-group">
+            @Html.Label("Adınız")
+            @Html.TextBoxFor(h => h.FirstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.FirstName)
+            <br />
+            @Html.Label("Soyadınız")
+            @Html.TextBoxFor(h => h.LastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.LastName)
+            <br />
+            @Html.Label("Telefon")
+            @Html.TextBoxFor(h => h.PhoneNumber, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.PhoneNumber)
+            <br />
+            @Html.Label("Resim Seçiniz")
+            <div class="custom-file">
+                <input type="file" asp-for="ImagePath" class="c ustom-file-input" id="exampleInputFile">
+                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+            </div>
+            <br />
+            <button class="btn btn-warning">Güncelle</button>
+        </div>
+    </div>
+
+}

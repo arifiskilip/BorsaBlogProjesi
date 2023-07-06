@@ -1,0 +1,60 @@
+﻿@model Message
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-10">
+        <div class="contact-form bg-dark">
+            <h1 class="text-white add-letter-space mb-5">Bizden Ücretli Danışmanlık Alın</h1>
+            <form method="POST" class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-5">
+                            <label for="firstName" class="text-black-300">Adınız</label>
+                            <input asp-for="FirstName" type="text" class="form-control bg-transparent rounded-0 border-bottom shadow-none pb-15 px-0" placeholder="Berkay" required/>
+                            <p class="invalid-feedback">Lütfen adınızı giriniz!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-5">
+                            <label for="lastName" class="text-black-300">Soyadınız</label>
+                            <input asp-for="LastName" type="text" id="lastName" class="form-control bg-transparent rounded-0 border-bottom shadow-none pb-15 px-0" placeholder="Kayış" required/>
+                            <p class="invalid-feedback">Lütfen soyadınızı giriniz!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-5">
+                            <label for="email" class="text-black-300">E-Mail Address</label>
+                            <input asp-for="Email" type="email" id="email" class="form-control bg-transparent rounded-0 border-bottom shadow-none pb-15 px-0" placeholder="kayisberkays@gmail.com" required />
+                            <p class="invalid-feedback">Lütfen e-mail adresinizi giriniz!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-5">
+                            <label class="text-black-300">Yatırım Yapılacak Vaade?</label>
+                            <select asp-for="Time" class="d-block w-100">
+                                <option value="1-3">1-3</option>
+                                <option value="3-6">3-6</option>
+                                <option value="3-12">6-12</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group mb-5">
+                            <label for="message" class="text-black-300">Varsa Mesajınız</label>
+                            <textarea asp-for="Description" class="form-control bg-transparent rounded-0 border-bottom shadow-none pb-15 px-0" placeholder="Lütfen bize danışmanlık istediğiniz yatırım hakkında bilgi verin..." required></textarea>
+                            <p class="invalid-feedback">Lütfen doldurunuz!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-sm btn-primary" >Gönder<img src="~/galaxy/theme/images/arrow-right.png" alt=""></button>
+                    </div>
+                </div>
+             
+            </form>
+        </div>
+    </div>
+</div>
+

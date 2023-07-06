@@ -1,0 +1,34 @@
+﻿@model BlogPostModel
+@{
+    ViewData["Title"] = "BlogPostAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("BlogPostAdd", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="form-group">
+            @Html.Label("Başlık İsmi")
+            @Html.TextBoxFor(h => h.Title, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Title)
+            <br />
+            @Html.Label("Kategorisi")
+            @Html.DropDownListFor(h => h.CategoryId, (List<SelectListItem>)ViewBag.valueCategory, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.CategoryId)
+            <br />
+            @Html.Label("İçerik")
+            @Html.TextAreaFor(h => h.Description,new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Description)
+            <br />
+            @Html.Label("Resim Seçiniz")
+                <div class="custom-file">
+                        <input type="file" asp-for="ImagePath" class="c ustom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+            <br />
+            <button class="btn btn-warning">Ekle</button>
+        </div>
+    </div>
+ 
+}
+

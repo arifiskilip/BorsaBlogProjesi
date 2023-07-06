@@ -1,0 +1,32 @@
+﻿@model BlogPost
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<div class="row justify-content-between">
+    <div class="col-lg-10">
+        <img class="img-fluid" src="@Model.ImagePath" width="800px" height="530px">
+        <h1 class="text-white add-letter-space mt-4">@Model.Title</h1>
+        <ul class="post-meta mt-3 mb-4">
+            <li class="d-inline-block mr-3">
+                <span class="fas fa-clock text-primary"></span>
+                <a class="ml-1" href="#">@Model.PostDate.Value.ToShortDateString()</a>
+            </li>
+            <li class="d-inline-block">
+                <span class="fas fa-list-alt text-primary"></span>
+                <a class="ml-1" href="#">@Model.Category.Name</a>
+            </li>
+        </ul>
+
+        <p>@Model.Description</p>
+
+        <div class="blockquote bg-dark my-5">
+            <p class="blockquote-text pl-2">Yatırım Tavsiyesi Değildir!</p>
+            <span class="blockquote-footer text-white h4 mt-3">@Model.AppUser.FirstName @Model.AppUser.LastName</span>
+        </div>
+    </div>
+</div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
